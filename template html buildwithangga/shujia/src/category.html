@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <link href="output.css" rel="stylesheet" />
+        <title>Shujia</title>
+    </head>
+    <body>
+        <main class="relative mx-auto flex w-full max-w-[640px] flex-col gap-[30px] overflow-x-hidden bg-white pb-[112px]">
+            <div id="Background" class="absolute left-0 right-0 top-0">
+                <img src="assets/images/backgrounds/orange.png" alt="image" class="w-full h-[345px] object-cover object-bottom" />
+            </div>
+            <section id="NavTop" class="fixed left-0 right-0 top-[16px] z-30 transition-all duration-300">
+                <div class="relative mx-auto max-w-[640px] px-5">
+                    <div id="ContainerNav" class="flex items-center justify-between py-[14px] transition-all duration-300">
+                        <a href="index.html">
+                            <div id="Back" class="flex h-[44px] w-[44px] shrink-0 items-center justify-center rounded-full bg-white">
+                                <img src="assets/images/icons/back.svg" alt="icon" class="h-[22px] w-[22px] shrink-0" />
+                            </div>
+                        </a>
+                        <h2 id="Title" class="font-semibold text-white transition-all duration-300">Explore</h2>
+                        <a href="#">
+                            <div id="Cart" class="flex h-[44px] w-[44px] shrink-0 items-center justify-center rounded-full bg-white">
+                                <img src="assets/images/icons/cart.svg" alt="icon" class="h-[22px] w-[22px] shrink-0" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <header class="relative mx-auto mt-[100px] flex items-center gap-4">
+                <img src="assets/images/icons/living-room-header.svg" alt="icon" class="h-[70px] w-[70px] shrink-0" />
+                <div>
+                    <h1 class="text-[26px] font-extrabold leading-[39px] text-white">Living Room</h1>
+                    <p class="text-white">189,394 Services</p>
+                </div>
+            </header>
+            <section id="mostOrdered" class="relative space-y-[14px]">
+                <h3 class="pl-5 text-[18px] font-bold leading-[27px] text-white">Most Ordered</h3>
+                <div id="MostOrderedSlider" class="swiper w-full overflow-x-hidden">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide !w-fit">
+                            <a href="service-details.html" class="card">
+                                <div class="relative flex w-[230px] shrink-0 flex-col gap-[12px] overflow-hidden rounded-[24px] border border-shujia-graylight bg-white p-4 transition-all duration-300 hover:border-shujia-orange">
+                                    <span class="absolute right-[26px] top-[26px] shrink-0 rounded-full bg-white px-2 py-[7px]">
+                                        <div class="flex items-center gap-[2px]">
+                                            <img src="assets/images/icons/star.svg" alt="icon" />
+                                            <p class="text-xs font-semibold leading-[18px]">4.8</p>
+                                        </div>
+                                    </span>
+                                    <div class="flex h-[140px] w-full shrink-0 items-center justify-center overflow-hidden rounded-[16px] bg-[#D9D9D9]">
+                                        <img src="assets/images/thumbnails/cleaning-medium.png" alt="image" class="h-full w-full object-cover" />
+                                    </div>
+                                    <h4 class="line-clamp-2 min-h-[48px] font-semibold">Mini Swim Pool and Kids Soccer Fields Grass</h4>
+                                    <div class="flex flex-col gap-y-3">
+                                        <div class="flex items-center gap-2">
+                                            <img src="assets/images/icons/date.svg" alt="icon" class="h-5 w-5 shrink-0" />
+                                            <p class="text-sm leading-[21px] text-shujia-gray">Living Room</p>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <img src="assets/images/icons/clock.svg" alt="icon" class="h-5 w-5 shrink-0" />
+                                            <p class="text-sm leading-[21px] text-shujia-gray">15 Hours</p>
+                                        </div>
+                                        <strong class="font-semibold text-shujia-orange">Rp 8.560.392</strong>
+                                        <img class="absolute bottom-0 right-0" src="assets/images/backgrounds/decoration.svg" alt="icon" />
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide !w-fit">
+                            <a href="service-details.html" class="card">
+                                <div class="relative flex w-[230px] shrink-0 flex-col gap-[12px] overflow-hidden rounded-[24px] border border-shujia-graylight bg-white p-4 transition-all duration-300 hover:border-shujia-orange">
+                                    <span class="absolute right-[26px] top-[26px] shrink-0 rounded-full bg-white px-2 py-[7px]">
+                                        <div class="flex items-center gap-[2px]">
+                                            <img src="assets/images/icons/star.svg" alt="icon" />
+                                            <p class="text-xs font-semibold leading-[18px]">4.8</p>
+                                        </div>
+                                    </span>
+                                    <div class="flex h-[140px] w-full shrink-0 items-center justify-center overflow-hidden rounded-[16px] bg-[#D9D9D9]">
+                                        <img src="assets/images/thumbnails/watchtv-medium.png" alt="image" class="h-full w-full object-cover" />
+                                    </div>
+                                    <h4 class="line-clamp-2 min-h-[48px] font-semibold">Home Family Theater Best Lights Installation</h4>
+                                    <div class="flex flex-col gap-y-3">
+                                        <div class="flex items-center gap-2">
+                                            <img src="assets/images/icons/date.svg" alt="icon" class="h-5 w-5 shrink-0" />
+                                            <p class="text-sm leading-[21px] text-shujia-gray">Living Room</p>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <img src="assets/images/icons/clock.svg" alt="icon" class="h-5 w-5 shrink-0" />
+                                            <p class="text-sm leading-[21px] text-shujia-gray">15 Hours</p>
+                                        </div>
+                                        <strong class="font-semibold text-shujia-orange">Rp 8.560.392</strong>
+                                        <img class="absolute bottom-0 right-0" src="assets/images/backgrounds/decoration.svg" alt="icon" />
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide !w-fit">
+                            <a href="service-details.html" class="card">
+                                <div class="relative flex w-[230px] shrink-0 flex-col gap-[12px] overflow-hidden rounded-[24px] border border-shujia-graylight bg-white p-4 transition-all duration-300 hover:border-shujia-orange">
+                                    <span class="absolute right-[26px] top-[26px] shrink-0 rounded-full bg-white px-2 py-[7px]">
+                                        <div class="flex items-center gap-[2px]">
+                                            <img src="assets/images/icons/star.svg" alt="icon" />
+                                            <p class="text-xs font-semibold leading-[18px]">4.8</p>
+                                        </div>
+                                    </span>
+                                    <div class="flex h-[140px] w-full shrink-0 items-center justify-center overflow-hidden rounded-[16px] bg-[#D9D9D9]">
+                                        <img src="assets/images/thumbnails/gardening-medium.png" alt="image" class="h-full w-full object-cover" />
+                                    </div>
+                                    <h4 class="line-clamp-2 min-h-[48px] font-semibold">Rumah Kaca Garden Zen Cactus Bonsai Zen</h4>
+                                    <div class="flex flex-col gap-y-3">
+                                        <div class="flex items-center gap-2">
+                                            <img src="assets/images/icons/date.svg" alt="icon" class="h-5 w-5 shrink-0" />
+                                            <p class="text-sm leading-[21px] text-shujia-gray">Gardens</p>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <img src="assets/images/icons/clock.svg" alt="icon" class="h-5 w-5 shrink-0" />
+                                            <p class="text-sm leading-[21px] text-shujia-gray">15 Hours</p>
+                                        </div>
+                                        <strong class="font-semibold text-shujia-orange">Rp 8.560.392</strong>
+                                        <img class="absolute bottom-0 right-0" src="assets/images/backgrounds/decoration.svg" alt="icon" />
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide !w-fit">
+                            <a href="service-details.html" class="card">
+                                <div class="relative flex w-[230px] shrink-0 flex-col gap-[12px] overflow-hidden rounded-[24px] border border-shujia-graylight bg-white p-4 transition-all duration-300 hover:border-shujia-orange">
+                                    <span class="absolute right-[26px] top-[26px] shrink-0 rounded-full bg-white px-2 py-[7px]">
+                                        <div class="flex items-center gap-[2px]">
+                                            <img src="assets/images/icons/star.svg" alt="icon" />
+                                            <p class="text-xs font-semibold leading-[18px]">4.8</p>
+                                        </div>
+                                    </span>
+                                    <div class="flex h-[140px] w-full shrink-0 items-center justify-center overflow-hidden rounded-[16px] bg-[#D9D9D9]">
+                                        <img src="assets/images/thumbnails/press-medium.png" alt="image" class="h-full w-full object-cover" />
+                                    </div>
+                                    <h4 class="line-clamp-2 min-h-[48px] font-semibold">AI House Security Max Secure within Apps</h4>
+                                    <div class="flex flex-col gap-y-3">
+                                        <div class="flex items-center gap-2">
+                                            <img src="assets/images/icons/date.svg" alt="icon" class="h-5 w-5 shrink-0" />
+                                            <p class="text-sm leading-[21px] text-shujia-gray">Security</p>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <img src="assets/images/icons/clock.svg" alt="icon" class="h-5 w-5 shrink-0" />
+                                            <p class="text-sm leading-[21px] text-shujia-gray">15 Hours</p>
+                                        </div>
+                                        <strong class="font-semibold text-shujia-orange">Rp 8.560.392</strong>
+                                        <img class="absolute bottom-0 right-0" src="assets/images/backgrounds/decoration.svg" alt="icon" />
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="LatestServices" class="relative flex flex-col gap-[40px]">
+                <div class="flex flex-col gap-[14px]">
+                    <h3 class="pl-5 text-[18px] font-bold leading-[27px]">Latest Services</h3>
+                    <a href="service-details.html">
+                        <div class="mx-5 flex gap-3 rounded-[24px] border border-shujia-graylight bg-white p-4 transition-all duration-300 hover:border-shujia-orange">
+                            <div class="flex h-[101px] w-[120px] shrink-0 items-center justify-center overflow-hidden rounded-2xl">
+                                <img src="assets/images/thumbnails/write-mini.png" alt="image" class="h-full w-full object-cover" />
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <h4 class="line-clamp-2 min-h-[48px] font-semibold">Home Family Theater Best Lights Installation</h4>
+                                <div class="flex items-center gap-2">
+                                    <img src="assets/images/icons/clock.svg" alt="icon" class="h-5 w-5 shrink-0" />
+                                    <p class="text-sm leading-[21px] text-shujia-gray">15 Hours</p>
+                                </div>
+                                <strong class="font-semibold text-shujia-orange">Rp 8.560.392</strong>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="service-details.html">
+                        <div class="mx-5 flex gap-3 rounded-[24px] border border-shujia-graylight bg-white p-4 transition-all duration-300 hover:border-shujia-orange">
+                            <div class="flex h-[101px] w-[120px] shrink-0 items-center justify-center overflow-hidden rounded-2xl">
+                                <img src="assets/images/thumbnails/swim-mini.png" alt="image" class="h-full w-full object-cover" />
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <h4 class="line-clamp-2 min-h-[48px] font-semibold">Home Family Theater Best Lights Installation</h4>
+                                <div class="flex items-center gap-2">
+                                    <img src="assets/images/icons/clock.svg" alt="icon" class="h-5 w-5 shrink-0" />
+                                    <p class="text-sm leading-[21px] text-shujia-gray">15 Hours</p>
+                                </div>
+                                <strong class="font-semibold text-shujia-orange">Rp 8.560.392</strong>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="service-details.html">
+                        <div class="mx-5 flex gap-3 rounded-[24px] border border-shujia-graylight bg-white p-4 transition-all duration-300 hover:border-shujia-orange">
+                            <div class="flex h-[101px] w-[120px] shrink-0 items-center justify-center overflow-hidden rounded-2xl">
+                                <img src="assets/images/thumbnails/cleaning-mini.png" alt="image" class="h-full w-full object-cover" />
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <h4 class="line-clamp-2 min-h-[48px] font-semibold">Home Family Theater Best Lights Installation</h4>
+                                <div class="flex items-center gap-2">
+                                    <img src="assets/images/icons/clock.svg" alt="icon" class="h-5 w-5 shrink-0" />
+                                    <p class="text-sm leading-[21px] text-shujia-gray">15 Hours</p>
+                                </div>
+                                <strong class="font-semibold text-shujia-orange">Rp 8.560.392</strong>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            <section id="Filter" class="fixed bottom-5 left-0 right-0 z-30 mx-auto w-full">
+                <div class="mx-auto flex max-w-[640px] justify-center">
+                    <button type="button">
+                        <div class="mx-auto flex !w-fit shrink-0 items-center gap-2 rounded-full bg-shujia-orange px-[18px] py-[14px] transition-all duration-300 hover:shadow-[0px_4px_10px_0px_#D04B1E80]">
+                            <img src="assets/images/icons/filter.svg" alt="icon" />
+                            <p class="font-semibold text-white">Filter (12)</p>
+                        </div>
+                    </button>
+                </div>
+            </section>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="js/category.js"></script>
+        <script src="js/global-nav1.js"></script>
+    </body>
+</html>
