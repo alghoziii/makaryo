@@ -1,35 +1,138 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import MyCartPage from "./pages/MyCartPage";
+import DetailsPage from "./pages/DetailsPage";
+import MyBookingPage from "./pages/MyBookingPage";
+import PaymentPage from "./pages/PaymentPage";
+import SuccessBookingPage from "./pages/SuccesBookingPage";
+import CategoryPage from "./pages/CategoryPage";
+import BookingPage from "./pages/BookingPage";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import UserPage from "./pages/UserPage";
+
+// Check if user is authenticated
+const isAuthenticated = () => {
+  return localStorage.getItem("token") !== null;
+};
+
+// Protected Route component
+const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
+  if (!isAuthenticated()) {
+    return <Navigate to="/login" replace />;
+  }
+  return <>{children}</>;
+};
+
+// Public Route component (redirect to home if already logged in)
+const PublicRoute = ({ children }: { children: React.ReactNode }) => {
+  if (isAuthenticated()) {
+    return <Navigate to="/home" replace />;
+  }
+  return <>{children}</>;
+};
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        {/* Default route redirects to login */}
+        <Route path="/" element={<Navigate to="/login" replace />} />
+
+        {/* Public routes (auth pages) */}
+        <Route
+          path="/login"
+          element={
+            <PublicRoute>
+              <Login />
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <PublicRoute>
+              <Register />
+            </PublicRoute>
+          }
+        />
+
+        {/* Protected routes */}
+        <Route
+          path="/home"
+          element={
+            <ProtectedRoute>
+              <HomePage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <ProtectedRoute>
+              <MyCartPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/booking"
+          element={
+            <ProtectedRoute>
+              <BookingPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/payment"
+          element={
+            <ProtectedRoute>
+              <PaymentPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/success-booking"
+          element={
+            <ProtectedRoute>
+              <SuccessBookingPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/my-booking"
+          element={
+            <ProtectedRoute>
+              <MyBookingPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/service/:slug"
+          element={
+            <ProtectedRoute>
+              <DetailsPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/category/:slug"
+          element={
+            <ProtectedRoute>
+              <CategoryPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/user"
+          element={
+            <ProtectedRoute>
+              <UserPage />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
