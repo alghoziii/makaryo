@@ -5,12 +5,13 @@ RUN composer install \
     --no-dev \
     --prefer-dist \
     --no-interaction \
-    --optimize-autoloader
+    --optimize-autoloader \
+    --no-scripts
 
 FROM node:20-alpine AS frontend-assets
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci
+RUN npm install
 COPY . .
 RUN npm run build
 
@@ -30,6 +31,7 @@ COPY . .
 COPY --from=frontend-assets /app/public/build ./public/build
 
 RUN cp .env.example .env \
+    && php artisan package:discover --ansi \
     && php artisan key:generate --force \
     && mkdir -p storage/framework/cache storage/framework/sessions storage/framework/views bootstrap/cache \
     && chown -R www-data:www-data storage bootstrap/cache
