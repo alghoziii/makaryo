@@ -37,6 +37,8 @@ COPY . .
 RUN cp .env.example .env \
     && php artisan package:discover --ansi \
     && php artisan key:generate --force \
+    && php artisan filament:upgrade \
+    && php artisan storage:link \
     && mkdir -p storage/framework/cache storage/framework/sessions storage/framework/views bootstrap/cache \
     && chown -R www-data:www-data storage bootstrap/cache
 
