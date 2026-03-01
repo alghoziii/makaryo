@@ -32,6 +32,13 @@ const PublicRoute = ({ children }: { children: React.ReactNode }) => {
   return <>{children}</>;
 };
 
+const AdminRedirect = () => {
+  const apiUrl = (import.meta.env.VITE_REACT_API_URL || `${window.location.origin}/api`).trim();
+  const backendBaseUrl = apiUrl.replace(/\/api\/?$/, "");
+  window.location.replace(`${backendBaseUrl}/admin/login`);
+  return null;
+};
+
 function App() {
   return (
     <BrowserRouter>
@@ -56,6 +63,8 @@ function App() {
             </PublicRoute>
           }
         />
+        <Route path="/admin/login" element={<AdminRedirect />} />
+        <Route path="/admin/*" element={<AdminRedirect />} />
 
         {/* Protected routes */}
         <Route
@@ -130,6 +139,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </BrowserRouter>
   );
