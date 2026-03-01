@@ -18,13 +18,6 @@ RUN composer install \
     --optimize-autoloader \
     --no-scripts
 
-FROM node:20-alpine AS frontend-assets
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-RUN npm run build
-
 FROM php:8.3-cli-alpine
 WORKDIR /var/www/html
 
@@ -34,11 +27,12 @@ RUN apk add --no-cache \
     oniguruma-dev \
     icu-dev \
     mysql-client \
-    && docker-php-ext-install pdo pdo_mysql mbstring intl bcmath
+    git \
+    unzip \
+    && docker-php-ext-install pdo pdo_mysql mbstring intl bcmath zip
 
 COPY --from=vendor /app/vendor ./vendor
 COPY . .
-COPY --from=frontend-assets /app/public/build ./public/build
 
 RUN cp .env.example .env \
     && php artisan package:discover --ansi \
